@@ -53,7 +53,7 @@ class Inventory:
             count = len(self._products)
             print(color("Current Inventory:", "blue"))
             for product in self._products:
-                print(f"ID: {product.productID} | Name: {product.name} | Author: {product.author} | Category: {product.category} | Quantity: {product.quantity} | Price: {product.price} | Total: {product.total}")
+                print(f"ID: {product.productID} | Name: {product.name} | Author: {product.author} | Category: {product.category} | Quantity: {product.quantity} | Price: {product.price} | Total: {product.total:.2f}")
             print(color(f"Products in inventory: {count}", "magenta"))
 
     def updateProduct(self, name: str,

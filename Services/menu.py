@@ -283,7 +283,7 @@ def menuClient(inv: Inventory, sale_service: SaleService, current_user: User) ->
                         price=product.price,
                         role=int(current_user.role)
                     )
-                    sale_service.saveCSV("../Archivos/Sales.csv", append=True)
+                    sale_service.saveCSV("../Archivos/Sales.csv", append=False)
                     inv.saveCSV("../Archivos/Inventario.csv")
                     inv.loadCSV("../Archivos/Inventario.csv")
                     print(color(f"Purchase successful. Total: ${product.price * qty_i:.2f}", "green"))

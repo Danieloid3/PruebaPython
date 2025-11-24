@@ -1,6 +1,6 @@
 saleID,username,product,quantity,price,role,total
 1,Andres,Cien años de soledad,1,50.7,2,50.7
 2,Andres,Cien años de soledad,2,50.7,2,101.4
-1,Andres,Cien años de soledad,1,50.7,2,50.7
-2,Andres,Cien años de soledad,2,50.7,2,101.4
 3,Andres,Rayuela,5,10.6,2,53.0
+4,Andres,Cien años de soledad,1,50.7,2,50.7
+5,Maryhug,Orgullo y Prejuicio,4,23.0,2,92.0
