@@ -35,15 +35,21 @@ class SaleService:
         total_items = sum(s.quantity for s in self._sales)
         by_product = Counter(s.product for s in self._sales)
         by_user = Counter(s.username for s in self._sales)
-        top_product, top_product_qty = by_product.most_common(1)[0]
-        top_user, top_user_qty = by_user.most_common(1)[0]
+        top_products= by_product.most_common(3)
+        top_users = by_user.most_common(3)
+        print(top_products, top_users)
 
         print(color("--- Sales Statistics ---", "blue"))
         print(f"Total revenue: {color(f'${total_revenue:.2f}', 'green')}")
         print(f"Total items sold: {color(str(total_items), 'cyan')}")
         print("-" * 30)
-        print(f"Top product: {top_product} ({color(str(top_product_qty), 'yellow')} sales)")
-        print(f"Top buyer: {top_user} ({color(str(top_user_qty), 'yellow')} purchases)")
+        # print(f"Top product: {top_product.keys()[0]} ({color(str(top_product.values()[0]), 'yellow')} sales)")
+        # print(f"Top buyer: {top_user} ({color(str(top_user.values()[0]), 'yellow')} purchases)")
+        for product in top_products:
+            print(f"Top product: {top_products.index(product)+1}. {product[0]}: {product[1]} sells")
+        print(color("-" * 30, "magenta"))
+        for client in top_users:
+            print(f"Top client: {top_users.index(client)+1}. {client[0]}, with {client[1]} buys.")
         print(color("-----------------------", "blue"))
 
     def saveCSV(self, filePath: str, append: bool = False) -> None:
